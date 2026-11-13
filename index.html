@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Azis</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center;
+         font: 600 20px/1.4 -apple-system, system-ui, sans-serif; background: Canvas; color: CanvasText; }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<p id="m">Back to Azis…</p>
+<script>
+  // The bank returns here with ?code=…&state=… (or ?error=…). Hand them to the app.
+  var target = "azis://bank" + window.location.search;
+  window.location.replace(target);
+  setTimeout(function () {
+    document.getElementById("m").innerHTML = '<a href="' + target + '">Open Azis</a>';
+  }, 1200);
+</script>
+</body>
+</html>
